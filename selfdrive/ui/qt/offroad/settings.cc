@@ -355,7 +355,7 @@ BehaviorPanel::BehaviorPanel(SettingsWindow *parent) : ListWidget(parent){
         behavior.setFriction(static_cast<float>(value));
       }
     },
-    {"SteerDelay", tr("Steer Delay:"), "Sec.", 0.0, 1.0, 0.1,
+    {"SteerDelay", tr("Steer Delay:"), "Sec.", 0.0, 5.0, 0.1,
       [](cereal::Behavior::Builder &behavior, double value) {
         behavior.setSteerDelay(static_cast<float>(value));
       }
