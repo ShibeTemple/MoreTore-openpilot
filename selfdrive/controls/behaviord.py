@@ -16,7 +16,7 @@ PARAMS = {
     "LatAccelFactor": {"default": 1.0, "range": (0.0, 4.0), "label": "Lateral Accel Factor:", "units": "Coef."},
     "LatAccelOffset": {"default": 0.0, "range": (-0.2, 0.2), "label": "Lateral Accel Offset:", "units": "Coef."},
     "Friction": {"default": 0.2, "range": (0.0, .5), "label": "Friction:", "units": "Coef."},
-    "SteerDelay": {"default": 0.1, "range": (0.0, 1.0), "label": "Steer Delay:", "units": "Sec."},
+    "SteerDelay": {"default": 0.1, "range": (0.0, 5.0), "label": "Steer Delay:", "units": "Sec."},
 }
 
 class LiveBehavior:
