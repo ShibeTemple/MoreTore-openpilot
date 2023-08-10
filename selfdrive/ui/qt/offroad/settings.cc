@@ -325,14 +325,9 @@ BehaviorPanel::BehaviorPanel(SettingsWindow *parent) : ListWidget(parent){
   // Add sliders here
   // name, label, units, min, max, default, setter function
   std::vector<SliderDefinition> slider_defs{
-    {"AccelCruiseMin", tr("Minimum Cruise Accel:"), "m/s<sup>2</sup>", -3.0, 0.0, -1.2,
+    {"SteerDelay", tr("Steer Delay:"), "Sec.", 0.0, 5.0, 0.1,
       [](cereal::Behavior::Builder &behavior, double value) {
-        behavior.setAccelCruiseMin(static_cast<float>(value));
-      }
-    },
-    {"AccelCruiseMaxFactor", tr("Cruise Accel Factor:"), "Coef.", 0.0, 3.0, 1.0,
-      [](cereal::Behavior::Builder &behavior, double value) {
-        behavior.setAccelCruiseMaxFactor(static_cast<float>(value));
+        behavior.setSteerDelay(static_cast<float>(value));
       }
     },
     {"LatAngleFactor", tr("Steering Angle Factor:"), "Coef.", 0.0, 0.3, 0.14,
@@ -345,19 +340,24 @@ BehaviorPanel::BehaviorPanel(SettingsWindow *parent) : ListWidget(parent){
         behavior.setLatAccelFactor(static_cast<float>(value));
       }
     },
-    {"LatAccelOffset", tr("Lateral Accel Offset:"), "Coef.", -0.2, 0.2, 0.0,
-      [](cereal::Behavior::Builder &behavior, double value) {
-        behavior.setLatAccelOffset(static_cast<float>(value));
-      }
-    },
     {"Friction", tr("Friction:"), "Coef.", 0.0, 0.5, 0.2,
       [](cereal::Behavior::Builder &behavior, double value) {
         behavior.setFriction(static_cast<float>(value));
       }
     },
-    {"SteerDelay", tr("Steer Delay:"), "Sec.", 0.0, 5.0, 0.1,
+    {"AccelCruiseMin", tr("Minimum Cruise Accel:"), "m/s<sup>2</sup>", -3.0, 0.0, -1.2,
       [](cereal::Behavior::Builder &behavior, double value) {
-        behavior.setSteerDelay(static_cast<float>(value));
+        behavior.setAccelCruiseMin(static_cast<float>(value));
+      }
+    },
+    {"AccelCruiseMaxFactor", tr("Cruise Accel Factor:"), "Coef.", 0.0, 3.0, 1.0,
+      [](cereal::Behavior::Builder &behavior, double value) {
+        behavior.setAccelCruiseMaxFactor(static_cast<float>(value));
+      }
+    },
+    {"LatAccelOffset", tr("Lateral Accel Offset:"), "Coef.", -0.2, 0.2, 0.0,
+      [](cereal::Behavior::Builder &behavior, double value) {
+        behavior.setLatAccelOffset(static_cast<float>(value));
       }
     },
   };
