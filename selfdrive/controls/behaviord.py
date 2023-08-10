@@ -10,13 +10,13 @@ A_CRUISE_MIN = -1.2
 
 # Update this dict and run slider_gen.py to generate the code for the sliders, params, and log.capnp
 PARAMS = {
-    "AccelCruiseMin": {"default": -1.2, "range": (-3.0, 0.0), "label": "Minimum Cruise Accel:", "units": "m/s<sup>2</sup>"},
-    "AccelCruiseMaxFactor": {"default": 1.0, "range": (0.0, 3.0), "label": "Cruise Accel Factor:", "units": "Coef."},
+    "SteerDelay": {"default": 0.1, "range": (0.0, 5.0), "label": "Steer Delay:", "units": "Sec."},
     "LatAngleFactor": {"default": 0.14, "range": (0.0, 0.3), "label": "Steering Angle Factor:", "units": "Coef."},
     "LatAccelFactor": {"default": 1.0, "range": (0.0, 4.0), "label": "Lateral Accel Factor:", "units": "Coef."},
-    "LatAccelOffset": {"default": 0.0, "range": (-0.2, 0.2), "label": "Lateral Accel Offset:", "units": "Coef."},
     "Friction": {"default": 0.2, "range": (0.0, .5), "label": "Friction:", "units": "Coef."},
-    "SteerDelay": {"default": 0.1, "range": (0.0, 5.0), "label": "Steer Delay:", "units": "Sec."},
+    "AccelCruiseMin": {"default": -1.2, "range": (-3.0, 0.0), "label": "Minimum Cruise Accel:", "units": "m/s<sup>2</sup>"},
+    "AccelCruiseMaxFactor": {"default": 1.0, "range": (0.0, 3.0), "label": "Cruise Accel Factor:", "units": "Coef."},
+    "LatAccelOffset": {"default": 0.0, "range": (-0.2, 0.2), "label": "Lateral Accel Offset:", "units": "Coef."},
 }
 
 class LiveBehavior:
